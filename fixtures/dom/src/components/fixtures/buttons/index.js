@@ -1,7 +1,7 @@
-const React = window.React;
-
 import FixtureSet from '../../FixtureSet';
 import TestCase from '../../TestCase';
+
+const React = window.React;
 
 function onButtonClick() {
   window.alert(`This shouldn't have happened!`);
@@ -10,21 +10,23 @@ function onButtonClick() {
 export default class ButtonTestCases extends React.Component {
   render() {
     return (
-      <FixtureSet title="Buttons" description="">
+      <FixtureSet title="Buttons">
         <TestCase
           title="onClick with disabled buttons"
-          description="The onClick event handler should not be invoked when clicking on a disabled buyaton">
+          description="The onClick event handler should not be invoked when clicking on a disabled button">
           <TestCase.Steps>
             <li>Click on the disabled button</li>
           </TestCase.Steps>
           <TestCase.ExpectedResult>
             Nothing should happen
           </TestCase.ExpectedResult>
-          <button disabled onClick={onButtonClick}>Click Me</button>
-          </TestCase>
-          <TestCase
-            title="onClick with disabled buttons containing other elements"
-            description="The onClick event handler should not be invoked when clicking on a disabled button that contains other elements">
+          <button disabled onClick={onButtonClick}>
+            Click Me
+          </button>
+        </TestCase>
+        <TestCase
+          title="onClick with disabled buttons containing other elements"
+          description="The onClick event handler should not be invoked when clicking on a disabled button that contains other elements">
           <TestCase.Steps>
             <li>Click on the disabled button, which contains a span</li>
           </TestCase.Steps>
